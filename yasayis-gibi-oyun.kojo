@@ -21,31 +21,32 @@ satıryaz(s"ve ${(canvasBounds.height / 10).toInt} kare boyunda.")
 
 val gösterVeDur = /**/ yanlış // doğru    // deseni göster ve dur
 val yavaşÇalış  = /**/ yanlış // doğru
-val nesil       = 10                      // verilen nesle gelince dur
-val dur         = /**/ yanlış // doğru
+val nesil       = 2000                    // verilen nesle gelince dur
+val dur         = /* yanlış */ doğru
 val oran        = 40                      // canlandırmayı yavaşlatma oranı
-// Canlandırma (animate adındaki) komut her saniye 25 kere çalışıyor.
-// Onun için bu oran kadar tekrardan sadece birinde nesil yenileyerek yavaşlatıyoruz.
-// Nesil değişmeden daha iyi görelim diye. Oranı 1'e yaklaştırarak hızlandırabilirsin.
+// Canlandırma komutu (adı animate) bir saniyede 40 kere çalıştırılıyor
+// Bir saniyede bir nesil ilerlemek için oran 40 olmalı.
+// Bir saniyede 10 nesil ilerlemek için oran 4 olmalı.
 
-// ilk desen ne olsun seçelim:
-val seç = 0
+// deseni seçelim:
+val seç = 3
 // block1 ve block2 bir kaç füze yolluyor ve sonra 1000. nesil civarı gibi duruyor.
 val (desen, adı) = seç match {
     case 0 => (üçlüler, "üçlüler")
-    case 1 => (glider,  "glider")
-    case 2 => (fpent,   "fpent")
-    case 3 => (diehard, "diehard")
+    case 1 => (glider,  "glider")  /* makineli tüfek gibi */
+    case 2 => (fpent,   "fpent")   /* Yaklaşık 1000 nesil canlı sonra peryodik */
+    case 3 => (diehard, "diehard") /* 130 nesil sonra can kalmiyor */
     case 4 => (block1,  "block1")
     case 5 => (block2,  "block2")
     case 6 => (tiny,    "tiny")
     case 7 => (ü2a,     "ü2a")
     case 8 => (ü2b,     "ü2b")
+    case 9 => (dörtlü,  "dörtlü")
 }
 
 v = başlangıç(v, desen)
 
-yaz(s"$adı adlı desende ${desen.size} tane canlı kare var.\nNesilleri sayalım: ")
+yaz(s"$seç. $adı adlı desende ${desen.size} tane canlı kare var.\nNesilleri sayalım: ")
 
 var t = 0
 val z0 = epochTime // şimdiki zamanı (geçmişte bir ana göre) anımsayalım
@@ -94,6 +95,7 @@ def çiz(v: Vector[Sayı]) = for (i <- 0 until KU * KU)
 
 // Meşhur olmuş desenlerden birkaçı
 def fpent = List((0, 1), (1, 0), (1, 1), (1, 2), (2, 2))
+// Two clusters: right triangle with corner on upper right and its right neigbor with horiz triple with a center hat above
 def diehard = List((0, 1), (1, 0), (1, 1), (5, 0), (6, 0), (7, 0), (6, 2))
 def acorn = List((0, 0), (1, 0), (1, 2), (3, 1), (4, 0), (5, 0), (6, 0))
 def glider = List((-18, 3), (-18, 4), (-17, 3), (-17, 4), (-8, 2), (-8, 3), (-8, 4), (-7, 1), (-7, 5),
@@ -112,3 +114,4 @@ def üçlüler = List((0, 2), (0, 3), (0, 4), (0, -2), (0, -3), (0, -4),
 def ü2a = List((0, 0), (0, 1), (0, -1)) ++ üçlüler
 // öbür türlü, yani yatay olanları bağlayalım
 def ü2b = List((0, 0), (1, 0), (-1, 0)) ++ üçlüler
+def dörtlü = List((0, 0), (1, 0), (-1, 0), (0, 2))  // diehard'in altkümesi
