@@ -10,6 +10,12 @@
  * Let  𝐿  represent the event of losing the game if your strategy is always to switch doors.
  */ 
 
+// P(L) = P(A) * P(L assuming A) + P(B) * P(L assuming B)
+//   or equivalently:
+// P(L) = P(A and L) + P(B and L)
+//   because,
+// P(A) + P(B) = 1
+
 // for amm only. from: ~/src/kojo/git/kojo/src/main/scala/net/kogics/kojo/lite/CoreBuiltins.scala
 def round(n: Number, digits: Int = 0): Double = {
   val factor = math.pow(10, digits).toDouble

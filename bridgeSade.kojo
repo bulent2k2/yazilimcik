@@ -1,22 +1,7 @@
-/* 
- * 6.0 3.67 2.5 1.8 1.33 are the rate of the increase of binomial coefficients for (13 k)
- * 39 kinds of distributions of hands do we have
- * 0 of the hands are left to count.
- * 0.711 is the probability one of the top five kinds of hands will be dealt.
- * 0.03 is the prob of a (4,4,4,1) hand
- * Top five distrib:
- * (d4432,0.216)
- * (d5332,0.155)
- * (d5431,0.129)
- * (d5422,0.106)
- * (d4333,0.105)
- */
-
 def round(n: Number, digits: Int = 0): Double = {
     val factor = math.pow(10, digits).toDouble
     math.round(n.doubleValue * factor).toLong / factor
 }
-//clearOutput
 def pow(base: Int, exp: Int): BigInt = if (exp < 1) 1 else base * pow(base, exp - 1)
 def fac(n: Int): BigInt = if (n < 2) 1 else n * fac(n - 1)
 def seqRep(n: Int, k: Int): BigInt = pow(n, k)
@@ -29,14 +14,11 @@ val numAll = choose(52, 13)
 println(s"$numAll is the number of all possible hands.")
 def nice(n: BigInt) = round(n.toDouble / numAll.toDouble, 3) // print the probability in a nice way
 
-// how many ways of choosing a hand of a given number of cards all of one suit
 val c6of = choose(13, 6).toInt // = c7
 val c5of = choose(13, 5).toInt // = c8
 val c4of = choose(13, 4).toInt // = c9
 val c3of = choose(13, 3).toInt
 val c2of = choose(13, 2).toInt
-// pascal's triangle is symmetric and the numbers increase towards the center, but increase less and less
-println(f"${c2of / 13.0} ${c3of / c2of.toDouble}%3.2f ${c4of / c3of.toDouble} ${c5of / c4of.toDouble} ${c6of / c5of.toDouble}%3.2f are the rate of the increase of binomial coefficients for (13 k)")
 // number of hands with a given distribution
 val n4441 = 4 * pow(c4of, 3) * 13
 val n4432 = 6 * pow(c4of, 2) * 2 * c3of * c2of

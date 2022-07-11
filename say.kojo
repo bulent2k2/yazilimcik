@@ -1,3 +1,5 @@
+// see: saySade.kojo saySapSade.kojo and euler/f.scala
+
 def pow(base: Int, exp: Int): Long = if (exp < 1) 1 else base * pow(base, exp - 1) 
 def fac(n: Int): Long = if (n < 2) 1 else n * fac(n-1)
 // sequence of k objects from a pool of n objects. Can use an object multiple times. [order matters, repetition allowed]
@@ -156,6 +158,7 @@ println((for(k <- 0 to 5) yield(seqWithRep(5, k)/fac(k))).mkString(" "))
 // compute all collections of 2 or 3 objects chosen with repetition from a pool of 5 objects 
 // we need to sort our lists (repetition requires lists as sets don't work.)
 // let's figure out how to do that first:
+// See ~/src/euler/sampleForComprehensions.kojo
 def sortLists(xs: List[Int], ys: List[Int]): Boolean =  if (!xs.isEmpty && !ys.isEmpty) { if (xs.head == ys.head) sortLists(xs.tail, ys.tail) else xs.head < ys.head } else xs.isEmpty
 def instruct1(n: Int, k: Int, set: Set[List[Int]], repeat: Boolean, order: Boolean) = {
   val orderOrChoose = if (order) "ordering" else "choosing"

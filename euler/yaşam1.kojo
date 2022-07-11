@@ -6,10 +6,10 @@ import Staging.{ animate, circle, clear, setFillColor, wipe }
 çıktıyıSil; clear(); gridOn(); axesOn(); setFillColor(mavi)
 
 // bu yazılımcıkta hızıKur gibi kaplumba komutları bir işe yaramıyor,
-// çünkü çizimleri yapan kaplumba değil Staging biriminin komutları
+// çünkü çizimleri yapan kaplumba değil Staging birimini
 
 // bu oyunun dünyası yani tahtası büyük bir kare. Kenarı KU uzunluğunda olsun
-// Nasıl satranç tahtası 8x8, bu tahta 128x128 kare.
+// Nasıl satranç tahtası 8x8, bu tahta da 128x128 kare.
 val KU = 128
 // karenın kenarı kaplumbanın on adımına denk
 
@@ -19,31 +19,29 @@ satıryaz(s"Dünyamızda $KU'in karesi yani ${dünya.size} tane hane var.")
 yaz(s"Ekranımız ${(canvasBounds.width / 10).toInt} kare eninde ")
 satıryaz(s"ve ${(canvasBounds.height / 10).toInt} kare boyunda.")
 
-val oran = 1 // canlandırmayı yavaşlatma oranı
-// Canlandırma komutu (adı animate) bir saniyede 30,40 kere çalıştırılıyor
-// Bir saniyede bir nesil ilerlemek için oran yaklaşık 40 olmalı.
-// Bir saniyede 10 nesil ilerlemek için oran 4 olmalı.
-// En hızlısı 1.
+val oran = 5 // canlandırmayı yavaşlatmak için bunu arttır.
+// En hızlısı 1. 40'a eşitlersen saniyede bir nesil ilerliyor yaklaşık olarak.
+// Nasıl mı? Canlandırma komutu (adı animate) bir saniyede 30 kere çalıştırılıyor. 
 
-val gösterVeDur = /**/ yanlış // doğru    // deseni göster ve dur
-val dur = doğru // her desenin bir durağı var. Ondan sonra fazla bir şey değişmiyor.
+val gösterVeDur = yanlış // bunu doğru yaparsan deseni gösterip dururuz
+val sonundaDur = doğru   // her desenin bir durağı var. Ondan sonra fazla bir şey değişmiyor.
 // Ama, yine de çalışmaya devam etsin isterse, bunu yanlışa çevir.
 
 // deseni seçelim:
 val seç = 1
 // block1 ve block2 bir kaç füze yolluyor ve sonra 1000. nesil civarı gibi duruyor.
 val (desen, adı, durak) = seç match {
-    case 0  => (üçlüler, "üçlüler", 20)
-    case 1  => (kayGit, "kayGit", 500) /* makineli tüfek gibi */
-    case 2  => (esaslı, "esaslı", 1111) /* Yaklaşık 1000 nesil canlı sonra peryodik */
-    case 3  => (dokuzcanlı, "dokuzcanlı", 130) /* 131 nesil sonra can kalmıyor */
-    case 4  => (blok1, "block1", 1200) //
-    case 5  => (blok2, "block2", 1200) //
-    case 6  => (küçücük, "tiny", 700) // küçücük
-    case 7  => (ü2a, "ü2a", 60) // üçlülere ek
-    case 8  => (ü2b, "ü2b", 60) // benzeri
-    case 9  => (dörtlü, "dörtlü", 30) // üçlü üretiyor
-    case 10 => (tohum, "tohum", 2200) // ne muhteşem bir meşe palamudu!
+    case 0 => (üçlüler, "üçlüler", 20)
+    case 1 => (kayGit, "kayGit", 500) /* makineli tüfek gibi */
+    case 2 => (esaslı, "esaslı", 1111) /* Yaklaşık 1000 nesil canlı sonra peryodik */
+    case 3 => (dokuzcanlı, "dokuzcanlı", 130) /* 131 nesil sonra can kalmıyor */
+    case 4 => (blok1, "block1", 1200) //
+    case 5 => (blok2, "block2", 1200) //
+    case 6 => (küçücük, "tiny", 700) // küçücük
+    case 7 => (ü2a, "ü2a", 60) // üçlülere ek
+    case 8 => (ü2b, "ü2b", 60) // benzeri
+    case 9 => (dörtlü, "dörtlü", 30) // üçlü üretiyor
+    case _ => (tohum, "tohum", 2200) // ne muhteşem bir meşe palamudu!
 }
 
 dünya = başlangıç(dünya, desen)
@@ -62,7 +60,7 @@ animate {
         if (gösterVeDur) stopAnimation
     }
     zaman += 1
-    if (dur && nesil == durak) {
+    if (sonundaDur && nesil == durak) {
         val z1 = epochTime - z0
         satıryaz(s"\n${round(z1, 2)} saniye geçti. Durduk.")
         stopAnimation()

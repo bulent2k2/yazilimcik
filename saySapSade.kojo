@@ -1,8 +1,5 @@
-/* run as: 
- * amm ~/src/yaz/yazilimcik/saySade.kojo
- * see ./say.kojo for more info */
-def fac2(n: Int): BigInt = if (n < 2) 1 else n * fac2(n - 1) // risks stack overflow
-def fac(n: Int): BigInt = if (n < 2) 1 else (2 to n).map(BigInt(_)).toList.reduce(_ * _)
+// see ~/src/yaz/yazilimcik/saySapSade.kojo and saySade.kojo and say.kojo and many others...
+def fac(n: Int): BigInt = if (n < 2) 1 else n * fac(n - 1)
 def pow(b: Int, e: Int): BigInt = if (e < 1) 1 else b * pow(b, e - 1)
 // count sequences or collections of size k chosen from a pool of n objects.
 // we can allow repetition (like throwing dice, or after each choice, it is as if we put it back into the deck or bag)
@@ -37,7 +34,6 @@ def expectedValue(ps: Numbers, as: Numbers): Double = {
     require(round(ps.sum, 8) == 1, s"One and only one outcome is required. Probabilities=$ps.")
     ps.zip(as).map { case (p, a) => p * a }.sum
 }
-
 // Variance is defined as (also known as square of standard-deviation):
 //   sigma^2(G) = sum(pi*(ai - ev(G))^2)
 def variance(ps: Numbers, as: Numbers): Double = {
@@ -64,6 +60,10 @@ def normalizeUnfairCoin(p: Double, a: Double = 1.0, b: Double = 0.0): (Double, D
 }
 def gaussian(x: Double): Double = math.sqrt(0.5 / math.Pi) * math.exp(-0.5 * x * x)
 
+// see ./iterated-games.kojo and ./normal-ders.kojo
+def getOutcomeOfNormalizedIteratedGame(outcome: Double, n: Int, ev: Double, vari: Double): Double =
+  (outcome - n * ev) / math.sqrt(n * vari)
+
 def pluralS(n: Int): String = if (n == 1) "" else "s"
 val face: Char = '☺'
 /* */
@@ -78,10 +78,11 @@ val face: Char = '☺'
 def r(d: Double) = round(d, 3)
 
 // See ~/src/euler/sampleForComprehensions.kojo
-//def sortLists(xs: List[Int], ys: List[Int]): Boolean = if (xs.isEmpty || ys.isEmpty) xs.isEmpty else if (xs.head == ys.head) sortLists(xs.tail, ys.tail) else xs.head < ys.head
 def sortLists[N](xs: List[N], ys: List[N])(implicit arg0: math.Ordering[N]): Boolean = if (xs.isEmpty || ys.isEmpty) xs.isEmpty
 else if (xs.head == ys.head) sortLists(xs.tail, ys.tail) else arg0.lt(xs.head, ys.head)
-def instruct1(numBullet: Int, n: Int, k: Int, set: Set[List[Int]], repeat: Boolean, order: Boolean) = {
+
+def sampleForExpressions(n: Int) = {
+  def instruct1(numBullet: Int, n: Int, k: Int, set: Set[List[Int]], repeat: Boolean, order: Boolean) = {
     val cmdName = (if (order) "seq" else "col") ++ (if (repeat) "Rep" else "Unq")
     val orderOrChoose = if (order) "ordering" else "choosing"
     val withOrWithout = if (repeat) "with" else "without"
@@ -89,10 +90,8 @@ def instruct1(numBullet: Int, n: Int, k: Int, set: Set[List[Int]], repeat: Boole
     val i = numBullet
     println(f"${i}) $cmdName%6s : There are ${set.size} ways of $orderOrChoose $k objects out of $n $withOrWithout repetition$elaborate.")
     println("  They are: " + set.toList.sortWith(sortLists).map(xs => xs.mkString).mkString("{", " ", "}"))
-  //println(s"And, again, there are ${set.size} of them. Count them all if you don't believe me!")
     println("")
-}
-def sampleForExpr(n: Int) = {
+  }
   var set1 = Set.empty[List[Int]]
   val list1 = (1 to n).toList
   var i = 1
@@ -101,33 +100,5 @@ def sampleForExpr(n: Int) = {
   for (x <- list1; y <- list1; if y != x) set1 += List(x, y) /*        seqUnq */; instruct1(i, n, 2, set1, false, true) ; set1 = Set.empty; i+=1
   for (x <- list1; y <- list1) set1 += List(x, y) /*                   seqRep */; instruct1(i, n, 2, set1, true, true)  ; set1 = Set.empty; i+=1
 }
-sampleForExpr(4)
-
-val tableOfBC = for (r <- 0 to 10; c <- 0 to r) yield (r, c, bc(r, c))
-val tab2 = tableOfBC.groupBy { case (r, c, bc) => r }
-val l1: ((Int, Int, BigInt)) => BigInt = { case (_, _, bc) => bc }
-println("Binomial coefficients:\n\t(a+b)^n = c0xa^n + c1xa^(n-1)xb + c2xa^(n-2)xb^2 + ...\n\t          ... + c(n-1)xaxb^(n-1) + cnxb^n\nPascal's Triangle:")
-for (r <- 0 to 9) println(s"\tn=$r => ${tab2(r).map(l1).mkString(",")}"); println("")
-
-def sampleTable(n: Int) = {
-  println( "=============================")
-  println(s"  Given a pool of $n objects ")
-  println( "  choose or order k objects  ")
-  println( "=============================")
-  println("k colUnq colRep seqUnq seqRep")
-  println("= ====== ====== ====== ======")
-  for (k <- 0 to n) println(f"$k%s ${colUnq(n, k)}%6d ${colRep(n, k)}%6d ${seqUnq(n, k)}%6d ${seqRep(n, k)}%6d")
-  println("=============================")
-  println("Note that seqUnq(n,k)/fac(k) gives us colUnq(n,k).")
-  println("However   seqRep(n,k)/fac(k) is not   colRep(n,k). Instead it gives: " + (for (k <- 0 to n) yield (seqRep(5, k) / fac(k))).mkString(" ") + ".")
-  println("")
-}
-sampleTable(5)
-
-println("=====\t ===========")
-println("  x  \t Gaussian(x)")
-println("=====\t ===========")
-val range=26
-for (x <- Range(0, range+1).toList.map(x => x.toDouble/4)) yield println(f"$x%5.2f\t ${gaussian(x)}%11.9f")
 
 println(s"Enjoy counting. Saymak güzel şey! ${face} Dr. Ben Bülent Başaran ${face}")
