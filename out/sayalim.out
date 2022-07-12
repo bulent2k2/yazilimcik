@@ -1,0 +1,136 @@
+============================================
+2 ögesi olan {a b} kümesinden 2 öge seçelim.
+============================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  1 tane bulduk: {ab}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  3 tane bulduk: {aa ab bb}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  2 tane bulduk: {ab ba}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  4 tane bulduk: {aa ab ba bb}
+
+==============================================
+3 ögesi olan {a b c} kümesinden 2 öge seçelim.
+==============================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  3 tane bulduk: {ab ac bc}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  6 tane bulduk: {aa ab ac bb bc cc}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  6 tane bulduk: {ab ac ba bc ca cb}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  9 tane bulduk: {aa ab ac ba bb bc ca cb cc}
+
+==============================================
+3 ögesi olan {a b c} kümesinden 3 öge seçelim.
+==============================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  1 tane bulduk: {abc}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  10 tane bulduk: {aaa aab aac abb abc acc bbb bbc bcc ccc}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  6 tane bulduk: {abc acb bac bca cab cba}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  27 tane bulduk: {aaa aab aac aba abb abc aca acb acc baa bab bac bba bbb bbc bca bcb bcc caa cab cac cba cbb cbc cca ccb ccc}
+
+================================================
+4 ögesi olan {a b c d} kümesinden 2 öge seçelim.
+================================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  6 tane bulduk: {ab ac ad bc bd cd}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  10 tane bulduk: {aa ab ac ad bb bc bd cc cd dd}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  12 tane bulduk: {ab ac ad ba bc bd ca cb cd da db dc}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  16 tane bulduk: {aa ab ac ad ba bb bc bd ca cb cc cd da db dc dd}
+
+================================================
+4 ögesi olan {a b c d} kümesinden 3 öge seçelim.
+================================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  4 tane bulduk: {abc abd acd bcd}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  20 tane bulduk: {aaa aab aac aad abb abc abd acc acd add bbb bbc bbd bcc bcd bdd ccc ccd cdd ddd}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  24 tane bulduk: {abc abd acb acd adb adc bac bad bca bcd bda bdc cab cad cba cbd cda cdb dab dac dba dbc dca dcb}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  64 tane bulduk: {aaa aab aac aad aba abb abc abd aca acb acc acd ada adb adc add baa bab bac bad bba bbb bbc bbd bca bcb bcc bcd bda bdb bdc bdd caa cab cac cad cba cbb cbc cbd cca ccb ccc ccd cda cdb cdc cdd daa dab dac dad dba dbb dbc dbd dca dcb dcc dcd dda ddb ddc ddd}
+
+==================================================
+5 ögesi olan {a b c d e} kümesinden 2 öge seçelim.
+==================================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  10 tane bulduk: {ab ac ad ae bc bd be cd ce de}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  15 tane bulduk: {aa ab ac ad ae bb bc bd be cc cd ce dd de ee}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  20 tane bulduk: {ab ac ad ae ba bc bd be ca cb cd ce da db dc de ea eb ec ed}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  25 tane bulduk: {aa ab ac ad ae ba bb bc bd be ca cb cc cd ce da db dc dd de ea eb ec ed ee}
+
+==================================================
+5 ögesi olan {a b c d e} kümesinden 3 öge seçelim.
+==================================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  10 tane bulduk: {abc abd abe acd ace ade bcd bce bde cde}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  35 tane bulduk: {aaa aab aac aad aae abb abc abd abe acc acd ace add ade aee bbb bbc bbd bbe bcc bcd bce bdd bde bee ccc ccd cce cdd cde cee ddd dde dee eee}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  60 tane bulduk: {abc abd abe acb acd ace adb adc ade aeb aec aed bac bad bae bca bcd bce bda bdc bde bea bec bed cab cad cae cba cbd cbe cda cdb cde cea ceb ced dab dac dae dba dbc dbe dca dcb dce dea deb dec eab eac ead eba ebc ebd eca ecb ecd eda edb edc}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  125 tane bulduk: {aaa aab aac aad aae aba abb abc abd abe aca acb acc acd ace ada adb adc add ade aea aeb aec aed aee baa bab bac bad bae bba bbb bbc bbd bbe bca bcb bcc bcd bce bda bdb bdc bdd bde bea beb bec bed bee caa cab cac cad cae cba cbb cbc cbd cbe cca ccb ccc ccd cce cda cdb cdc cdd cde cea ceb cec ced cee daa dab dac dad dae dba dbb dbc dbd dbe dca dcb dcc dcd dce dda ddb ddc ddd dde dea deb dec ded dee eaa eab eac ead eae eba ebb ebc ebd ebe eca ecb ecc ecd ece eda edb edc edd ede eea eeb eec eed eee}
+
+==========================================================
+9 ögesi olan {a b c d e f g h i} kümesinden 2 öge seçelim.
+==========================================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  36 tane bulduk: {ab ac ad ae af ag ah ai bc bd be bf bg bh bi cd ce cf cg ch ci de df dg dh di ef eg eh ei fg fh fi gh gi hi}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  45 tane bulduk: {aa ab ac ad ae af ag ah ai bb bc bd be bf bg bh bi cc cd ce cf cg ch ci dd de df dg dh di ee ef eg eh ei ff fg fh fi gg gh gi hh hi ii}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 2 öge seçelim.
+  72 tane bulduk: {ab ac ad ae af ag ah ai ba bc bd be bf bg bh bi ca cb cd ce cf cg ch ci da db dc de df dg dh di ea eb ec ed ef eg eh ei fa fb fc fd fe fg fh fi ga gb gc gd ge gf gh gi ha hb hc hd he hf hg hi ia ib ic id ie if ig ih}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 2 öge seçelim.
+  81 tane bulduk: {aa ab ac ad ae af ag ah ai ba bb bc bd be bf bg bh bi ca cb cc cd ce cf cg ch ci da db dc dd de df dg dh di ea eb ec ed ee ef eg eh ei fa fb fc fd fe ff fg fh fi ga gb gc gd ge gf gg gh gi ha hb hc hd he hf hg hh hi ia ib ic id ie if ig ih ii}
+
+==========================================================
+9 ögesi olan {a b c d e f g h i} kümesinden 3 öge seçelim.
+==========================================================
+1) SIZYİZ : sırayı önemsemeden (SırasIZ) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  84 tane bulduk: {abc abd abe abf abg abh abi acd ace acf acg ach aci ade adf adg adh adi aef aeg aeh aei afg afh afi agh agi ahi bcd bce bcf bcg bch bci bde bdf bdg bdh bdi bef beg beh bei bfg bfh bfi bgh bgi bhi cde cdf cdg cdh cdi cef ceg ceh cei cfg cfh cfi cgh cgi chi def deg deh dei dfg dfh dfi dgh dgi dhi efg efh efi egh egi ehi fgh fgi fhi ghi}
+
+2) SIZYLİ : sırayı önemsemeden (SırasIZ) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  165 tane bulduk: {aaa aab aac aad aae aaf aag aah aai abb abc abd abe abf abg abh abi acc acd ace acf acg ach aci add ade adf adg adh adi aee aef aeg aeh aei aff afg afh afi agg agh agi ahh ahi aii bbb bbc bbd bbe bbf bbg bbh bbi bcc bcd bce bcf bcg bch bci bdd bde bdf bdg bdh bdi bee bef beg beh bei bff bfg bfh bfi bgg bgh bgi bhh bhi bii ccc ccd cce ccf ccg cch cci cdd cde cdf cdg cdh cdi cee cef ceg ceh cei cff cfg cfh cfi cgg cgh cgi chh chi cii ddd dde ddf ddg ddh ddi dee def deg deh dei dff dfg dfh dfi dgg dgh dgi dhh dhi dii eee eef eeg eeh eei eff efg efh efi egg egh egi ehh ehi eii fff ffg ffh ffi fgg fgh fgi fhh fhi fii ggg ggh ggi ghh ghi gii hhh hhi hii iii}
+
+3) SLIYİZ : sıraya dikkat ederek (SıraLI) ve geri koymadan (YinelemesİZ) 3 öge seçelim.
+  504 tane bulduk: {abc abd abe abf abg abh abi acb acd ace acf acg ach aci adb adc ade adf adg adh adi aeb aec aed aef aeg aeh aei afb afc afd afe afg afh afi agb agc agd age agf agh agi ahb ahc ahd ahe ahf ahg ahi aib aic aid aie aif aig aih bac bad bae baf bag bah bai bca bcd bce bcf bcg bch bci bda bdc bde bdf bdg bdh bdi bea bec bed bef beg beh bei bfa bfc bfd bfe bfg bfh bfi bga bgc bgd bge bgf bgh bgi bha bhc bhd bhe bhf bhg bhi bia bic bid bie bif big bih cab cad cae caf cag cah cai cba cbd cbe cbf cbg cbh cbi cda cdb cde cdf cdg cdh cdi cea ceb ced cef ceg ceh cei cfa cfb cfd cfe cfg cfh cfi cga cgb cgd cge cgf cgh cgi cha chb chd che chf chg chi cia cib cid cie cif cig cih dab dac dae daf dag dah dai dba dbc dbe dbf dbg dbh dbi dca dcb dce dcf dcg dch dci dea deb dec def deg deh dei dfa dfb dfc dfe dfg dfh dfi dga dgb dgc dge dgf dgh dgi dha dhb dhc dhe dhf dhg dhi dia dib dic die dif dig dih eab eac ead eaf eag eah eai eba ebc ebd ebf ebg ebh ebi eca ecb ecd ecf ecg ech eci eda edb edc edf edg edh edi efa efb efc efd efg efh efi ega egb egc egd egf egh egi eha ehb ehc ehd ehf ehg ehi eia eib eic eid eif eig eih fab fac fad fae fag fah fai fba fbc fbd fbe fbg fbh fbi fca fcb fcd fce fcg fch fci fda fdb fdc fde fdg fdh fdi fea feb fec fed feg feh fei fga fgb fgc fgd fge fgh fgi fha fhb fhc fhd fhe fhg fhi fia fib fic fid fie fig fih gab gac gad gae gaf gah gai gba gbc gbd gbe gbf gbh gbi gca gcb gcd gce gcf gch gci gda gdb gdc gde gdf gdh gdi gea geb gec ged gef geh gei gfa gfb gfc gfd gfe gfh gfi gha ghb ghc ghd ghe ghf ghi gia gib gic gid gie gif gih hab hac had hae haf hag hai hba hbc hbd hbe hbf hbg hbi hca hcb hcd hce hcf hcg hci hda hdb hdc hde hdf hdg hdi hea heb hec hed hef heg hei hfa hfb hfc hfd hfe hfg hfi hga hgb hgc hgd hge hgf hgi hia hib hic hid hie hif hig iab iac iad iae iaf iag iah iba ibc ibd ibe ibf ibg ibh ica icb icd ice icf icg ich ida idb idc ide idf idg idh iea ieb iec ied ief ieg ieh ifa ifb ifc ifd ife ifg ifh iga igb igc igd ige igf igh iha ihb ihc ihd ihe ihf ihg}
+
+4) SLIYLİ : sıraya dikkat ederek (SıraLI) ve her seferinde geri koyarak (YinelemeLİ) 3 öge seçelim.
+  729 tane bulduk: {aaa aab aac aad aae aaf aag aah aai aba abb abc abd abe abf abg abh abi aca acb acc acd ace acf acg ach aci ada adb adc add ade adf adg adh adi aea aeb aec aed aee aef aeg aeh aei afa afb afc afd afe aff afg afh afi aga agb agc agd age agf agg agh agi aha ahb ahc ahd ahe ahf ahg ahh ahi aia aib aic aid aie aif aig aih aii baa bab bac bad bae baf bag bah bai bba bbb bbc bbd bbe bbf bbg bbh bbi bca bcb bcc bcd bce bcf bcg bch bci bda bdb bdc bdd bde bdf bdg bdh bdi bea beb bec bed bee bef beg beh bei bfa bfb bfc bfd bfe bff bfg bfh bfi bga bgb bgc bgd bge bgf bgg bgh bgi bha bhb bhc bhd bhe bhf bhg bhh bhi bia bib bic bid bie bif big bih bii caa cab cac cad cae caf cag cah cai cba cbb cbc cbd cbe cbf cbg cbh cbi cca ccb ccc ccd cce ccf ccg cch cci cda cdb cdc cdd cde cdf cdg cdh cdi cea ceb cec ced cee cef ceg ceh cei cfa cfb cfc cfd cfe cff cfg cfh cfi cga cgb cgc cgd cge cgf cgg cgh cgi cha chb chc chd che chf chg chh chi cia cib cic cid cie cif cig cih cii daa dab dac dad dae daf dag dah dai dba dbb dbc dbd dbe dbf dbg dbh dbi dca dcb dcc dcd dce dcf dcg dch dci dda ddb ddc ddd dde ddf ddg ddh ddi dea deb dec ded dee def deg deh dei dfa dfb dfc dfd dfe dff dfg dfh dfi dga dgb dgc dgd dge dgf dgg dgh dgi dha dhb dhc dhd dhe dhf dhg dhh dhi dia dib dic did die dif dig dih dii eaa eab eac ead eae eaf eag eah eai eba ebb ebc ebd ebe ebf ebg ebh ebi eca ecb ecc ecd ece ecf ecg ech eci eda edb edc edd ede edf edg edh edi eea eeb eec eed eee eef eeg eeh eei efa efb efc efd efe eff efg efh efi ega egb egc egd ege egf egg egh egi eha ehb ehc ehd ehe ehf ehg ehh ehi eia eib eic eid eie eif eig eih eii faa fab fac fad fae faf fag fah fai fba fbb fbc fbd fbe fbf fbg fbh fbi fca fcb fcc fcd fce fcf fcg fch fci fda fdb fdc fdd fde fdf fdg fdh fdi fea feb fec fed fee fef feg feh fei ffa ffb ffc ffd ffe fff ffg ffh ffi fga fgb fgc fgd fge fgf fgg fgh fgi fha fhb fhc fhd fhe fhf fhg fhh fhi fia fib fic fid fie fif fig fih fii gaa gab gac gad gae gaf gag gah gai gba gbb gbc gbd gbe gbf gbg gbh gbi gca gcb gcc gcd gce gcf gcg gch gci gda gdb gdc gdd gde gdf gdg gdh gdi gea geb gec ged gee gef geg geh gei gfa gfb gfc gfd gfe gff gfg gfh gfi gga ggb ggc ggd gge ggf ggg ggh ggi gha ghb ghc ghd ghe ghf ghg ghh ghi gia gib gic gid gie gif gig gih gii haa hab hac had hae haf hag hah hai hba hbb hbc hbd hbe hbf hbg hbh hbi hca hcb hcc hcd hce hcf hcg hch hci hda hdb hdc hdd hde hdf hdg hdh hdi hea heb hec hed hee hef heg heh hei hfa hfb hfc hfd hfe hff hfg hfh hfi hga hgb hgc hgd hge hgf hgg hgh hgi hha hhb hhc hhd hhe hhf hhg hhh hhi hia hib hic hid hie hif hig hih hii iaa iab iac iad iae iaf iag iah iai iba ibb ibc ibd ibe ibf ibg ibh ibi ica icb icc icd ice icf icg ich ici ida idb idc idd ide idf idg idh idi iea ieb iec ied iee ief ieg ieh iei ifa ifb ifc ifd ife iff ifg ifh ifi iga igb igc igd ige igf igg igh igi iha ihb ihc ihd ihe ihf ihg ihh ihi iia iib iic iid iie iif iig iih iii}
+
+Saymak ne güzel! ☺ Dr. Ben Bülent Başaran ☺

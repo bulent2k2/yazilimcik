@@ -33,12 +33,11 @@ def sampleForComprehensions(n: Int, k: Int) = {
       val set2 = for (x <- list1; y <- list1) yield(List(x, y).sorted) /*            colRep */; instruct1(2, k, set2.toSet, true, false)
       val set3 = for (x <- list1; y <- list1; if y != x) yield(List(x, y)) /*        seqUnq */; instruct1(3, k, set3.toSet, false, true)
       val set4 = for (x <- list1; y <- list1) yield(List(x, y)) /*                   seqRep */; instruct1(4, k, set4.toSet, true, true)
-    } else {
-      val set1 = for (x <- list1; y <- list1; z <- list1; if y != x && z != y) yield(List(x, y, z).sorted) /* colUnq */; instruct1(1, k, set1.toSet, false, false)
-      val set2 = for (x <- list1; y <- list1; z <- list1) yield(List(x, y, z).sorted) /*                      colRep */; instruct1(2, k, set2.toSet, true, false)
-      val set3 = for (x <- list1; y <- list1; z <- list1; if y != x && z != y) yield(List(x, y, z)) /*        seqUnq */; instruct1(3, k, set3.toSet, false, true)
-      val set4 = for (x <- list1; y <- list1; z <- list1) yield(List(x, y, z)) /*                             seqRep */; instruct1(4, k, set4.toSet, true, true)
-
+    } else { // k = 3
+      val set1 = for (x <- list1; y <- list1; z <- list1; if y != x && z != y && x != z) yield(List(x, y, z).sorted) /* colUnq */; instruct1(1, k, set1.toSet, false, false)
+      val set2 = for (x <- list1; y <- list1; z <- list1) yield(List(x, y, z).sorted) /*                                colRep */; instruct1(2, k, set2.toSet, true, false)
+      val set3 = for (x <- list1; y <- list1; z <- list1; if y != x && z != y && x != z) yield(List(x, y, z)) /*        seqUnq */; instruct1(3, k, set3.toSet, false, true)
+      val set4 = for (x <- list1; y <- list1; z <- list1) yield(List(x, y, z)) /*                                       seqRep */; instruct1(4, k, set4.toSet, true, true)
     }
   }
   doIt((1 to n).toList, k)
